@@ -27,3 +27,5 @@ pipeline {
         always { cleanWs() }
     }
 }
+
+}
