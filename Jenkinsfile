@@ -2,11 +2,11 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven3' // The name of Maven tool configured in Jenkins
+        maven 'Maven3' // Must match the Maven tool configured in Jenkins
     }
 
     environment {
-        NEXUS_CREDS = credentials('9049cbee-fba2-41fd-872d-8a9c1a654ebc')
+        NEXUS_CREDS = credentials('9049cbee-fba2-41fd-872d-8a9c1a654ebc') // Jenkins credentials ID for Nexus
     }
 
     stages {
@@ -19,13 +19,3 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'mvn clean package'
-            }
-        }
-
-       
-    post {
-        always { cleanWs() }
-    }
-}
-
-}
