@@ -6,7 +6,7 @@ pipeline {
     }
 
     environment {
-        NEXUS_CREDS = credentials('nexus-creds')
+        NEXUS_CREDS = credentials('9049cbee-fba2-41fd-872d-8a9c1a654ebc')
     }
 
     stages {
