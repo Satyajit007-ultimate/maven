@@ -22,16 +22,7 @@ pipeline {
             }
         }
 
-        stage('Deploy to Nexus') {
-            steps {
-                sh """
-                  mvn deploy -Dnexus.username=${NEXUS_CREDS_USR} \
-                             -Dnexus.password=${NEXUS_CREDS_PSW}
-                """
-            }
-        }
-    }
-
+       
     post {
         always { cleanWs() }
     }
